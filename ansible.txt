@@ -1,0 +1,34 @@
+MASTER:
+sudo apt-get update
+sudo apt-get install software-properties-common 
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt update
+sudo apt install ansible
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDNfbVeNRK6Nf7OkaKgrRs5YsR566MhX2qZ3MsAYTdgIYnTJWEdK/MWuyKQHOqFrpu4f63/svP0q9uV/Zu/kjpS/A9HDjKMcHJDvxC4HtrtA9/UnwIHgFCqTdZpm5PDBSerrOPAxt2rMk7anCTj0IogJ2h/oTCRnNMpeUUAz4TsZpIL9js7+y9/vJUKyyzzYGd8ytXV5ONQNsSa2IuSwWs9R+xejJXRbWfAF3kmJ8cnP0ZFhm49CvF5au44E3+VE110C1m/kZi8iIoogSNw9dp4DOU8yaQ+3g7EnRHteNAKWwzSkNSd4cWfHsVIT9yn2He8SU/ryAH3rCthc9xx4flvpzaT15+v+NToKH/p59DAJ/o8OmO/ikCMzzD/wLwNf2h+FZyU1pWtkUXZ0k3ukwLDlen8ws8O+LyUGNKqMcFm892dFRQnrKD0WEcYnFD2xOj0pbhtCLfZr1dUC65ldVk0yOqAFxVsMU9OcQyjPnCYFHucKtJ4rqH8YDjPFwro/+M= ubuntu@ip-172-31-94-189
+
+SLAVE:
+sudo apt update
+sudo apt-get install python3
+sudo apt-get install python
+
+MASTER:
+cd .ssh
+ls
+cat authorized_keys
+ssh-keygen
+ls
+cat id_rsa.pub
+
+SLAVE:
+cd .ssh
+ls
+sudo nano authorized_keys
+
+MASTER:
+sudo nano /etc/ansible/hosts
+ansible -m ping all
+
+
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDEMY2vvvcIaN+3/Wu7pX1N7JOswNb9BH9EnMbtvZHiWL3u8hXF330Sbb3PLNRNzvblQ0i/4YViL2h3HUSGSNf1xtcwE0zBWCTxCD7pJic4Znf78+vofzQ7jYgbc3dBi+WcNjEpp+cFW4KuhMgnK4IalYW0wj0WPFvmsf3wzZ/B0oqiVIckK95M7l0J8sK6HSugAhKgQBUEb9pqrknVoOpKi4tvSN8XFdWJq2RRLAcEc55JdSwkq/7x6Yv3whBX1IYho1iBA/tXGIMg7BVIpiLj8JOZoqGgccSyDtn51hUULfUqyDLjHNSwuPQgGD/Up0gXMx5faKnZTDQW2oBR+rSwCtU0VH9oyLK6KlXsS+UfffaAzCw7S5JocJPDXmMRlHIO6/InlwF4z7UvuwWP86DMJLrII5eVinsD5Cj1Eg0ZHW5MA3z6XhB26nRxSmExgRIOuCVIMO6/ZnS+kibYQPhb4LQY4XjHqGvbzlCqrVG7oCcqly/lB4axpRxtc+NvrIs= ubuntu@ip-172-31-84-108
